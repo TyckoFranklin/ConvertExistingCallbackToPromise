@@ -1,8 +1,8 @@
-function getTabAsync() {
+function getTabAsync(options) {
     const reject = (e) => { console.log("rejected:", e); }
     return new Promise(function (resolve, reject) {
-        chrome.tabs.query({ active: true }, resolve);
+        chrome.tabs.query(options, resolve);
     });
 }
 
-getTabAsync().then((a) => { console.log(a) });
+getTabAsync({ active: true }).then((a) => { console.log(a) });
