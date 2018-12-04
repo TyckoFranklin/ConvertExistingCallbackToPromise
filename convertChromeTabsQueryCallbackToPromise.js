@@ -1,5 +1,5 @@
 function getTabAsync(options) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         try {
             chrome.tabs.query(options, resolve);
         } catch (e) {
@@ -15,7 +15,7 @@ getTabAsync({ active: true })
 
 
 function getTabAsyncProofWithPause(options) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         try {
             setTimeout(() => {
                 chrome.tabs.query(options, resolve);

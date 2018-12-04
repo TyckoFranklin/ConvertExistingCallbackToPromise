@@ -2,13 +2,13 @@
 
 function cTPResolveRejectArguments(callbackBasedFunction, nArguments) {
     let [a, ...b] = arguments;
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         a(resolve, reject, ...b);
     });
 }
 
 function cTPArgumentResolve(callbackBasedFunction, options) {    
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         try {
             callbackBasedFunction(options, resolve);
         } catch (e) {
